@@ -1,0 +1,18 @@
+#!/bin/bash
+#------------------------------------------------------------------------
+# This script builds the HTML version of the documentation by calling out
+# to ttree to process the HTML in 'templates/src', adding headers, 
+# footers and other bits and pieces from 'templates/lib' and writing the 
+# final output to the 'html' directory.
+#
+# WARNING: 
+#  This script is generated when you run 'perl Makefile.PL'.  Any 
+#  changes made here may be lost!
+# 
+# Written by Andy Wardley.  May 2006, updated May 2012.
+#------------------------------------------------------------------------
+
+ttree -f [% config_dir %]/ttree.conf $@
+echo
+echo "Copying images into HTML directory"
+cp -r [% images_dir %] [% html_dir %]

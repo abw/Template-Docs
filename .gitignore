@@ -9,7 +9,7 @@ blib
 # contain system-specific paths.
 bin/build
 etc/httpd.conf
-etc/ttree.cfg
+etc/ttree.conf
 
 # The bin/build script writes all output to the 'html' directory
 html
