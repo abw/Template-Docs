@@ -6,7 +6,7 @@ use ExtUtils::MakeMaker;
 
 my %opts = (
     'NAME'           => 'Template-Docs',
-    'VERSION'        => 0.01,
+    'VERSION'        => 0.02,
     'PMLIBDIRS'      => [ 'lib' ], 
     'PREREQ_PM'      => {
         'Badger'     => 0.09,
@@ -36,6 +36,8 @@ my $root   = $Bin;
 my $etc    = File::Spec->catdir($root, 'etc');
 my $bin    = File::Spec->catdir($root, 'bin');
 my $meta   = File::Spec->catfile($root, 'metadata');
+my $images = File::Spec->catfile($root, 'images');
+my $html   = File::Spec->catfile($root, 'html');
 my $config = File::Spec->catfile($etc, 'ttree.cfg');
 my $httpd  = File::Spec->catfile($etc, 'httpd.conf');
 my $build  = File::Spec->catfile($bin, 'build');
@@ -56,10 +58,13 @@ print FH <<EOF;
 #  This script is generated when you run 'perl Makefile.PL'.  Any 
 #  changes made here may be lost!
 # 
-# Written by Andy Wardley.  May 2006.
+# Written by Andy Wardley.  May 2006, updated May 2012.
 #------------------------------------------------------------------------
 
 ttree -f $config \$\@
+echo
+echo "Copying images into HTML directory"
+cp -r $images $html
 EOF
 close(FH) || die "Cannot close $build: $!\n";
 chmod 0755, $build;

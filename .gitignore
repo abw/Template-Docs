@@ -1,0 +1,18 @@
+# All the usual stuff that gets generated as part of the build process.
+MYMETA.json
+MYMETA.yml
+Makefile
+*.tar.gz
+blib
+
+# The following are generated when 'perl Makefile.PL' is run and 
+# contain system-specific paths.
+bin/build
+etc/httpd.conf
+etc/ttree.cfg
+
+# The bin/build script writes all output to the 'html' directory
+html
+
+# Following is used by bin/bundle script
+tmp
