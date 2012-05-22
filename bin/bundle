@@ -1,0 +1,20 @@
+#!/bin/bash
+#------------------------------------------------------------------------
+# bundle
+#
+# Bash script to generate documetation bundle (.tar.gz) from html pages.
+# 
+# Written by Andy Wardley.  This is free software.
+#------------------------------------------------------------------------
+
+SRCDIR="html"
+TMPDIR="tmp"
+VERSION=`perl -MTemplate -e 'my $v = $Template::VERSION; $v =~ s/\W//g; print $v'`
+OUTDIR="TT_v${VERSION}_html_docs"
+OUTFILE="${OUTDIR}.tar.gz"
+
+mkdir -p ${TMPDIR}/${OUTDIR}
+echo "Copying files from $SRCDIR to $OUTDIR...\n";
+tar -cf - -C $SRCDIR --exclude .svn . | tar xvpf - -C $TMPDIR/$OUTDIR
+echo "Creating distribution $OUTFILE from $OUTDIR...\n";
+tar zcvf $OUTFILE -C $TMPDIR $OUTDIR

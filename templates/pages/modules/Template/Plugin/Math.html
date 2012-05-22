@@ -1,0 +1,159 @@
+[% TAGS [** **] %]
+
+<div class="pod">
+[** WRAPPER page/section title='SYNOPSIS' id='SYNOPSIS' -**]
+    <pre>
+      <span class="tt">[% USE Math %]</span>
+      
+      <span class="tt">[% Math.sqrt(9) %]</span>
+    </pre>
+[** END -**]
+[** WRAPPER page/section title='DESCRIPTION' id='DESCRIPTION' -**]
+    <p>
+      The Math plugin provides numerous mathematical functions for use within
+      templates.
+    </p>
+[** END -**]
+[** WRAPPER page/section title='METHODS' id='METHODS' -**]
+    <p>
+      <code>Template::Plugin::Math</code> makes available the following
+      functions from the Perl core:
+    </p>
+    <ul>
+    <li><b id="item_abs">abs</b>
+    </li>
+    <li><b id="item_atan2">atan2</b>
+    </li>
+    <li><b id="item_cos">cos</b>
+    </li>
+    <li><b id="item_exp">exp</b>
+    </li>
+    <li><b id="item_hex">hex</b>
+    </li>
+    <li><b id="item_int">int</b>
+    </li>
+    <li><b id="item_log">log</b>
+    </li>
+    <li><b id="item_oct">oct</b>
+    </li>
+    <li><b id="item_rand">rand</b>
+    </li>
+    <li><b id="item_sin">sin</b>
+    </li>
+    <li><b id="item_sqrt">sqrt</b>
+    </li>
+    <li><b id="item_srand">srand</b>
+    </li>
+    </ul>
+    <p>
+      In addition, if the <a href="[** cpanmod('Math::Trig')
+      **]">Math::Trig</a> module can be loaded, the following functions are
+      also available:
+    </p>
+    <ul>
+    <li><b id="item_pi">pi</b>
+    </li>
+    <li><b id="item_tan">tan</b>
+    </li>
+    <li><b id="item_csc">csc</b>
+    </li>
+    <li><b id="item_cosec">cosec</b>
+    </li>
+    <li><b id="item_sec">sec</b>
+    </li>
+    <li><b id="item_cot">cot</b>
+    </li>
+    <li><b id="item_cotan">cotan</b>
+    </li>
+    <li><b id="item_asin">asin</b>
+    </li>
+    <li><b id="item_acos">acos</b>
+    </li>
+    <li><b id="item_atan">atan</b>
+    </li>
+    <li><b id="item_acsc">acsc</b>
+    </li>
+    <li><b id="item_acosec">acosec</b>
+    </li>
+    <li><b id="item_asec">asec</b>
+    </li>
+    <li><b id="item_acot">acot</b>
+    </li>
+    <li><b id="item_acotan">acotan</b>
+    </li>
+    <li><b id="item_sinh">sinh</b>
+    </li>
+    <li><b id="item_cosh">cosh</b>
+    </li>
+    <li><b id="item_tanh">tanh</b>
+    </li>
+    <li><b id="item_csch">csch</b>
+    </li>
+    <li><b id="item_cosech">cosech</b>
+    </li>
+    <li><b id="item_sech">sech</b>
+    </li>
+    <li><b id="item_coth">coth</b>
+    </li>
+    <li><b id="item_cotanh">cotanh</b>
+    </li>
+    <li><b id="item_asinh">asinh</b>
+    </li>
+    <li><b id="item_acosh">acosh</b>
+    </li>
+    <li><b id="item_atanh">atanh</b>
+    </li>
+    <li><b id="item_acsch">acsch</b>
+    </li>
+    <li><b id="item_acosech">acosech</b>
+    </li>
+    <li><b id="item_asech">asech</b>
+    </li>
+    <li><b id="item_acoth">acoth</b>
+    </li>
+    <li><b id="item_acotanh">acotanh</b>
+    </li>
+    <li><b id="item_rad2deg">rad2deg</b>
+    </li>
+    <li><b id="item_rad2grad">rad2grad</b>
+    </li>
+    <li><b id="item_deg2rad">deg2rad</b>
+    </li>
+    <li><b id="item_deg2grad">deg2grad</b>
+    </li>
+    <li><b id="item_grad2rad">grad2rad</b>
+    </li>
+    <li><b id="item_grad2deg">grad2deg</b>
+    </li>
+    </ul>
+    <p>
+      If the <a href="[** cpanmod('Math::TrulyRandom')
+      **]">Math::TrulyRandom</a> module is available, and you've got the time
+      to wait, the <code>truly_random_number</code> method is available:
+    </p>
+    <pre>
+      <span class="tt">[% Math.truly_random_number %]</span>
+    </pre>
+[** END -**]
+[** WRAPPER page/section title='AUTHOR' id='AUTHOR' -**]
+    <p>
+      Andy Wardley &lt;abw@wardley.org&gt; <a
+      href="http://wardley.org/">http://wardley.org/</a>
+    </p>
+[** END -**]
+[** WRAPPER page/section title='COPYRIGHT' id='COPYRIGHT' -**]
+    <p>
+      Copyright (C) 1996-2007 Andy Wardley. All Rights Reserved.
+    </p>
+    <p>
+      This module is free software; you can redistribute it and/or modify it
+      under the same terms as Perl itself.
+    </p>
+[** END -**]
+[** WRAPPER page/section title='SEE ALSO' id='SEE_ALSO' -**]
+    <p>
+      <a href="[** ttmodlink('Template::Plugin') **]">Template::Plugin</a>
+    </p>
+[** END -**]
+
+</div>

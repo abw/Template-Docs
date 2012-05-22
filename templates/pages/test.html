@@ -1,0 +1,80 @@
+<style type="text/css">
+div.outer {
+  border: 1px solid red;
+  padding: 0 0 0 50px;
+  clear: right;
+}
+div.inner {
+  margin: 0 0 4px 0px;
+  min-height: 20px;
+  border: 1px solid green;
+}
+div.outer div.inner h1 {
+    padding: 0 80px 4px 28px;
+    margin: 0 0 0 -28px; 
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: bold;
+    background: url('/images/arrows/large/blue/dot.gif') no-repeat top left;
+    border: 1px solid blue;
+}
+div.section {
+    border: 1px solid red;
+}
+
+div.section div.head {
+    border: 1px solid green;
+}
+
+div.section div.head h1 {
+    border: 1px solid blue;
+}
+</style>
+  
+<div class="outer">
+  <div class="inner">
+    <h1>BLAH</h1>
+    Inner stuff
+  </div>
+  Outer stuff
+</div>
+
+<div class="section">
+  <div class="head">
+    <h1>SECTION</h1>
+    <a href="#body" class="top" title="Back up to the top of the page" >Top</a>
+    Inner stuff
+  </div>
+  Outer stuff
+</div>
+
+
+<h1>Heading 1 </h1>
+
+[% INCLUDE misc/lorem %]
+
+<h1>Heading 1</h1>
+
+<h2>Heading 2</h2>
+
+<p>First Para</p>
+
+<p>Second Para</p>
+
+<pre>Pre text</pre>
+
+<p>third para</p>
+
+<h3>Badger Quotes</h3>
+
+<p>
+[% FOREACH n IN [1..30];
+    FOREACH w IN ['back', 'up', 'next'];
+%]
+"[% Badger.quote(w) %]"<br/>
+[% END; END %]
+</p>
+
+This is some text.  Hello World
+
+[% INCLUDE misc/lorem %]

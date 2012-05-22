@@ -1,0 +1,14 @@
+[%  # define a site data structure containing any metadata that's 
+    # relevant to the site as a whole
+    site = {
+      name      = 'TT2 Documentation'
+      title     = 'Template Toolkit Documentation'
+      root      = rooturl
+      schemes   = ['blue' 'orange' 'green' 'purple' 'grey']
+      copyright = '1996-2012'
+    };
+    
+    site.modules  = YAML.undumpfile("$metadir/modules.yaml");
+    site.sections = YAML.undumpfile("$metadir/sections.yaml");
+    site.pages    = YAML.undumpfile("$metadir/pages.yaml");
+-%]

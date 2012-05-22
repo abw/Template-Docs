@@ -1,0 +1,31 @@
+<div id="header">
+  <a href="[% rooturl %]/index.html" id="logo" alt="" title="Click for the Home Page"><span class="alt">TT2 Home Page</span></a>
+[% PROCESS site/trail 
+         + site/controls
+         | trim | indent(2)
+%]
+  <h1 class="headline">[% page.title %]</h1>
+[% IF page.about -%]
+  <h2 class="subhead">[% page.about %]</h1>
+[% END %]
+</div>
+[% RETURN %]
+
+<div id="head">
+  <div id="nav">
+[% PROCESS site/trail 
+         + site/pager show_about=1
+         | trim | indent(4)
+%]
+  </div>
+  <h1 class="headline">[% page.title %]</h1>
+[% IF page.about -%]
+  <h2 class="subhead">[% page.about %]</h1>
+[% END %]
+  <a href="#" class="menuctrl show" onclick="widescreen_off(); return false" title="Show Menu">
+    <span class="about">Click to view the menu.  It's very nice.</span>
+  </a>
+  <a href="#" class="menuctrl hide" onclick="widescreen_on();  return false" title="Hide Menu">
+    <span class="about">Click to hide the menu and go all widescreen!</span>
+  </a>
+</div>

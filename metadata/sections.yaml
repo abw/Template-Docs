@@ -1,0 +1,87 @@
+---
+/:
+  menu:
+    - /manual/index.html
+    - /modules/index.html
+    - /tools/index.html
+    - /tutorial/index.html
+    - /faq/index.html
+/manual/:
+  menu:
+    - /manual/Intro.html
+    - /manual/Syntax.html
+    - /manual/Directives.html
+    - /manual/Variables.html
+    - /manual/VMethods.html
+    - /manual/Config.html
+    - /manual/Filters.html
+    - /manual/Plugins.html
+    - /manual/Internals.html
+    - /manual/Views.html
+    - /manual/Credits.html
+/modules/:
+  menu:
+    - /modules/Template.html
+    - /modules/Template/index.html
+/modules/Template/:
+  menu:
+    - /modules/Template/Base.html
+    - /modules/Template/Config.html
+    - /modules/Template/Constants.html
+    - /modules/Template/Context.html
+    - /modules/Template/Directive.html
+    - /modules/Template/Document.html
+    - /modules/Template/Exception.html
+    - /modules/Template/Filters.html
+    - /modules/Template/Grammar.html
+    - /modules/Template/Iterator.html
+    - /modules/Template/Namespace/index.html
+    - /modules/Template/Parser.html
+    - /modules/Template/Plugin.html
+    - /modules/Template/Plugin/index.html
+    - /modules/Template/Plugins.html
+    - /modules/Template/Provider.html
+    - /modules/Template/Service.html
+    - /modules/Template/Stash.html
+    - /modules/Template/Stash/index.html
+    - /modules/Template/Test.html
+    - /modules/Template/VMethods.html
+    - /modules/Template/View.html
+/modules/Template/Namespace/:
+  menu:
+    - /modules/Template/Namespace/Constants.html
+/modules/Template/Plugin/:
+  menu:
+    - /modules/Template/Plugin/Assert.html
+    - /modules/Template/Plugin/CGI.html
+    - /modules/Template/Plugin/Datafile.html
+    - /modules/Template/Plugin/Date.html
+    - /modules/Template/Plugin/Directory.html
+    - /modules/Template/Plugin/Dumper.html
+    - /modules/Template/Plugin/File.html
+    - /modules/Template/Plugin/Filter.html
+    - /modules/Template/Plugin/Format.html
+    - /modules/Template/Plugin/HTML.html
+    - /modules/Template/Plugin/Image.html
+    - /modules/Template/Plugin/Iterator.html
+    - /modules/Template/Plugin/Math.html
+    - /modules/Template/Plugin/Pod.html
+    - /modules/Template/Plugin/Procedural.html
+    - /modules/Template/Plugin/Scalar.html
+    - /modules/Template/Plugin/String.html
+    - /modules/Template/Plugin/Table.html
+    - /modules/Template/Plugin/URL.html
+    - /modules/Template/Plugin/View.html
+    - /modules/Template/Plugin/Wrap.html
+/modules/Template/Stash/:
+  menu:
+    - /modules/Template/Stash/Context.html
+    - /modules/Template/Stash/XS.html
+/tools/:
+  menu:
+    - /tools/tpage.html
+    - /tools/ttree.html
+/tutorial/:
+  menu:
+    - /tutorial/Web.html
+    - /tutorial/Datafile.html

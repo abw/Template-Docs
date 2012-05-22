@@ -1,0 +1,63 @@
+[%  # This is the "master" configuration template which is processed
+    # immediately before each page
+    
+    # If the debug flag is set then we generate a debug_msg() macro
+    # for spitting out debugging messages to stderr.  Otherwise we
+    # define it as an empty string so that it generates no output
+    # when "called"
+    IF debug;
+      MACRO debug_msg(text) 
+        FILTER stderr; 
+            "    # $text\n"; 
+        END;
+    ELSE;
+      debug_msg = '';
+    END;
+
+    MACRO warn(text) 
+        FILTER stderr; 
+            "    # WARNING: $text\n"; 
+        END;
+
+    IF rooturl;
+      debug_msg("Using pre-defined rooturl: $rooturl");
+    ELSE;
+      # Construct a relative path (e.g. ../..) upwards to the site root
+      rooturl = template.name;                    # get page template path
+      rooturl = rooturl.remove('\/?\w+\.\w+$');   # remove filename
+      rooturl = rooturl.replace('\w+', '..');     # replace each component with '..'
+      DEFAULT rooturl = '.';
+      debug_msg("Generated relative rooturl: $rooturl");
+    END;
+    
+    #rooturl = '';
+
+    # load any plugins we're going to use
+    USE Date;
+    USE Undent;
+    USE YAML;
+    USE Badger;
+
+    PROCESS config/site
+          + config/page;
+
+    MACRO ttmodlink(m) BLOCK;
+      IF (uri = site.modules.$m);
+        "${rooturl}$uri";
+      ELSE;
+        warn("Link to non-existant TT module: $m");
+        warn("(redirecting to search.cpan.org)");
+        cpanmod(m);
+      END;
+    END;
+
+    MACRO cpanmod(m) 
+      GET "http://search.cpan.org/search?query=$m&mode=all";
+
+    MACRO scheme_title(name) BLOCK;
+      title = FILTER ucfirst; name; END;
+      GET "Clear $title";
+    END;
+
+  
+%]

@@ -1,0 +1,80 @@
+The Template::Docs distribution contains the source templates for the 
+Template Toolkit v2 documentation and the modules and scripts used
+to generate the templates from the source pod.
+
+You only need to use this distribution if you're Andy Wardley or another
+maintainer of TT wanting to rebuild the HTML documentation for a new 
+release of TT2. 
+
+If you just want a complete set of pre-built HTML documentation for TT2
+then you can download it from the TT web site:
+
+    http://template-toolkit.org/docs/
+
+If you are Andy Wardley then you already know this (or you used to when 
+you wrote it), but I'll repeat it for the sake of anyone else who might
+need to know how it works.
+
+1) Run the Makefile.PL script to generate configuration files that are
+   correct for your installation.  If you're Andy Wardley, you probably 
+   don't need to do this, but hey, why not do it anyway, just to be sure.
+
+     $ perl Makefile.PL
+
+2) Run the bin/podmods script pointing it at the TT lib directory you want
+   to scan.  Like this:
+   
+     $ bin/podmods -v ~/tt/Template2/lib
+
+3) Run the bin/build script to generate the HTML.  Use '-a' to make it 
+   rebuild everything.  Like so:
+
+     $ bin/build -a
+
+The bin/build script runs ttree with the etc/ttree.cfg configuration file.
+The config/main template (in templates/library) is pre-processed, so all
+runtime template configuration happens from there.  The site/wrapper
+template (in the same place) is used as the main wrapper around templates
+so look there to see how the page layout, header, footers, etc., are added.
+
+If this doesn't work then complain to Andy Wardley.  If you are Andy Wardley
+then go and sit in the corner.  You only have yourself to blame.
+
+If you're not Andy Wardley and you're still reading then perhaps it's 
+because you're wondering if you could adapt this code to build fancy 
+HTML documentation for your own modules.  Well yes, you can, but it means
+hacking on the bin/podmods script which is a bit of a mess (I should know,
+I've re-hacked it half a dozen times now for various different modules).  
+I've made a start on refactoring it into a properly generic module, but 
+that could take a while.  Apologies in advance if the twisted code makes 
+you throw a fruit loop.
+
+
+Making an Archive
+-----------------
+
+If you're Andy Wardley, or the current maintainer of the TT2 web site in
+some future world, then this is for you.  It tells you how to generate 
+the .tar.gz file for other people to download because you've almost 
+certainly forgotten how to do it since last time.
+
+1) Do everything listed above to build the documentation.
+
+2) Run the bin/bundle script.  This will create a bundle file for the 
+   version of the Template module on your system, named something like
+   "TT_v224_html_docs.tar.gz".
+
+3) Move it to the web site source dir
+
+     $ mv TT_v221_html_docs.tar.gz ~/web/tt2.org/html/download
+
+4) Go and edit the ~/web/tt2.org/templates/library/config/site file and 
+   change tt2.version.docs to the latest version
+
+5) Rebuild the web site download page and sync up to tt2.org
+
+    $ cd ~/web/tt2.org
+    $ bin/build download/index.html
+    $ bin/pigup
+
+

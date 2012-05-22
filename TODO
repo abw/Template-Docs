@@ -1,0 +1,8 @@
+Rewrite this all to use Badger.  Or rather, merge this into Badger::Pod
+and Badger::Docs
+
+Add FAQ.
+
+Fix "Top ^" arrows in IE6
+
+Add search/index.

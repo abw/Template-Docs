@@ -1,0 +1,11 @@
+[% tt_docs = "http://template-toolkit.org/docs/$template.name" %]
+<div id="page">
+[% PROCESS site/sidebar
+         + site/content
+         | trim | indent(2)
+%]
+  <br class="clear" />
+  <div class="pageinfo">
+    <a href="[% tt_docs %]">[% tt_docs %]</a>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+[% TAGS [** **] %]
+
+<div class="pod">
+[** WRAPPER page/section title='USAGE' id='USAGE' -**]
+    <pre>
+      tpage [ --define var=value ] file(s)
+    </pre>
+[** END -**]
+[** WRAPPER page/section title='DESCRIPTION' id='DESCRIPTION' -**]
+    <p>
+      The <b>tpage</b> script is a simple wrapper around the Template Toolkit
+      processor. Files specified by name on the command line are processed in
+      turn by the template processor and the resulting output is sent to STDOUT
+      and can be redirected accordingly. e.g.
+    </p>
+    <pre>
+      tpage myfile &gt; myfile.out
+      tpage header myfile footer &gt; myfile.html
+    </pre>
+    <p>
+      If no file names are specified on the command line then <b>tpage</b> will
+      read STDIN for input.
+    </p>
+    <p>
+      The <code>--define</code> option can be used to set the values of
+      template variables. e.g.
+    </p>
+    <pre>
+      tpage --define author="Andy Wardley" skeleton.pm &gt; MyModule.pm
+    </pre>
+    [** WRAPPER page/subsection title='The <i>.tpagerc</i> Configuration File' id='section_The_i_tpagerc_i_Configuration_File' class='' -**]
+    <p>
+      You can use a <i>.tpagerc</i> file in your home directory.
+    </p>
+    <p>
+      The purpose of this file is to set any <i>global</i> configuration
+      options that you want applied <i>every</i> time <i>tpage</i> is run. For
+      example, you can use the <code>include_path</code> to use template files
+      from a generic template directory.
+    </p>
+    <p>
+      Run <code>tpage -h</code> for a summary of the options available.
+    </p>
+    <p>
+      See <a href="[** ttmodlink('Template') **]">Template</a> for general
+      information about the Perl Template Toolkit and the template language and
+      features.
+    </p>
+    
+    [** END -**]
+[** END -**]
+[** WRAPPER page/section title='AUTHOR' id='AUTHOR' -**]
+    <p>
+      Andy Wardley <a href="http://wardley.org/">http://wardley.org/</a>
+    </p>
+[** END -**]
+[** WRAPPER page/section title='COPYRIGHT' id='COPYRIGHT' -**]
+    <p>
+      Copyright (C) 1996-2008 Andy Wardley. All Rights Reserved.
+    </p>
+    <p>
+      This module is free software; you can redistribute it and/or modify it
+      under the same terms as Perl itself.
+    </p>
+[** END -**]
+[** WRAPPER page/section title='SEE ALSO' id='SEE_ALSO' -**]
+    <p>
+      <a href="[** ttmodlink('Template::Tools::ttree') **]">ttree</a>
+    </p>
+[** END -**]
+
+</div>

@@ -1,0 +1,61 @@
+/*------------------------------------------------------------------------*/
+/* default styles                                                         */
+/*------------------------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6 {
+    color: [% col.head %];
+}
+
+h1,h2,h3 {
+    margin: 0px 0 5px 0;
+}
+
+p {
+  color: #333;
+  padding: 0 0 8px 0;
+}
+
+p.tight {
+    padding: 4px 0;
+    margin: 0;
+}
+
+pre {
+  line-height: 120%;
+}
+
+code {
+  color: #224;
+  font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: [% col.link %];
+}
+
+a:visited {
+    color: [% col.seen %];
+}
+
+a:hover {
+    color: [% col.roll %];
+}
+
+a:focus {
+    -moz-outline: none;
+}
+
+.alt {
+    display: none;
+}
+
+.sample {
+    display: block;
+    width: 100px;
+    height: 30px;
+}
+
+br.clear {
+    clear: both;
+}

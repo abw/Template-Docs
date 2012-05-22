@@ -1,0 +1,4 @@
+<div id="sidebar">
+  <a href="[% rooturl %]/index.html" id="logo"></a>
+[% PROCESS site/menu | trim | indent(2) %]
+</div>
