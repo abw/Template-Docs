@@ -1,14 +1,15 @@
 package Template::Docs::Plugin::Undent;
 
-use strict;
-use warnings;
-use base 'Template::Plugin';
+use Badger::Class
+    base => 'Template::Plugin';
+
 
 sub new {
     my ($class, $context) = @_;
     $context->define_filter( undent => \&undent_filter_factory, 1 );
     return '';
 }
+
 
 sub undent_filter_factory {
     my ($context, @args) = @_;
@@ -23,6 +24,7 @@ sub undent_filter_factory {
         return $text;
     }
 }
+
 
 sub undent {
     my $text = shift;

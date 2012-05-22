@@ -1,10 +1,8 @@
 package Template::Docs::Plugin::TOC;
 
-use strict;
-use warnings;
-use base 'Template::Plugin';
-
-our $VERSION = 0.01;
+use Badger::Class
+    version => 0.01,
+    base    => 'Template::Plugin';
 
 sub new {
     my ($class, $context, $html) = @_;
@@ -24,6 +22,7 @@ sub new {
 
     return $self;
 }
+
 
 sub tic {
     my ($self, $level, $attr, $text) = @_;
@@ -110,7 +109,7 @@ Andy Wardley E<lt>abw@wardley.orgE<gt>
 
 =head1 COPYRIGHT
 
-Copyright (C) 20062-2007 Andy Wardley.  All Rights Reserved.
+Copyright (C) 20062-2012 Andy Wardley.  All Rights Reserved.
 
 This module is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

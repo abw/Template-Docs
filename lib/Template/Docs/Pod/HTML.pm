@@ -17,25 +17,26 @@
 #========================================================================
 
 package Template::Docs::Pod::HTML;
-use base 'Template::Docs::Base';
+
+use Badger::Class
+    version => 0.04,
+    base    => 'Badger::Base',
+    messages => {
+        no_file => 'no file specified to convert',
+        no_text => 'no text specified to convert',
+        parse   => 'error reading %s: %s',
+        view    => 'error converting %s: %s',
+    };
+
 use Pod::POM;
 
-use strict;
-use warnings;
-
-our $VERSION  = 0.03;
-our $MESSAGES = {
-    no_file => 'no file specified to convert',
-    no_text => 'no text specified to convert',
-    parse   => 'error reading %s: %s',
-    view    => 'error converting %s: %s',
-};
 our $PARSER = 'Pod::POM';
 our $VIEW   = 'Template::Docs::Pod::HTML::View';
 our $CPAN_MODS = {
     map { ($_, 1) }
     qw( CGI DBI POSIX )
 };
+
 
 sub convert_pod_pom {
     my ($self, $pom, $name) = @_;
@@ -45,6 +46,7 @@ sub convert_pod_pom {
     $self->{ meta } = $view->{ meta } || { };
     return $output;
 }
+
 
 sub convert_pod_file {
     my $self   = shift;
@@ -73,11 +75,13 @@ sub metadata {
     return $self->{ meta };
 }
 
+
 package Template::Docs::Pod::HTML::View;
 use base 'Pod::POM::View::HTML';
-
 use Text::Wrap;
+
 $Text::Wrap::huge = 'overflow';
+
 
 sub view_pod {
     my ($self, $pod) = @_;
@@ -395,7 +399,7 @@ $Revision$
 
 =head1 COPYRIGHT
 
-Copyright (C) 2005-2006 Andy Wardley.  All Rights Reserved.
+Copyright (C) 2005-2012 Andy Wardley.  All Rights Reserved.
 
 This module is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

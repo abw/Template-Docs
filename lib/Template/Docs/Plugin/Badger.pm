@@ -1,9 +1,7 @@
 package Template::Docs::Plugin::Badger;
 
-use strict;
-use warnings;
-use Template::Plugin;
-use base 'Template::Plugin';
+use Badger::Class
+    base => 'Template::Plugin';
 
 our @badger_quotes = (
     "Hello, I'm a talking badger.",
